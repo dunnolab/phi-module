@@ -11,7 +11,7 @@ Neural network interatomic potentials have achieved remarkable accuracy in quant
 We propose **Φ-Module**, a universal and lightweight plugin that:
 
 - Enforces latent **Poisson's equation** using the **Laplacian eigenbasis**.
-- Learns **electrostatic potential** (ϕ) and **charge density** (ρ) self-supervised, without labeled charges.
+- Learns **electrostatic potential** (ϕ) and **partial charges** (ρ) self-supervised, without labeled charges.
 - Augments baseline GNN potentials with an electrostatic energy term:
 - Improves accuracy on OE62 and MD22 benchmarks while being memory-efficient and hyperparameter-stable.
 
