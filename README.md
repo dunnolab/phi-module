@@ -49,7 +49,7 @@ Alternatively, use the provided `Dockerfile` for an isolated container setup. Ma
 - 61,489 entries with DFT-calculated total energies
 - Used for energy prediction
 
-OE62 can be downloaded from [TUM website]((https://mediatum.ub.tum.de/1507656)). Then, the dataset has to be processed into corresponding splits using `oe62_preprocessing.py` file.
+OE62 can be downloaded from [TUM website](https://mediatum.ub.tum.de/1507656). Then, the dataset has to be processed into corresponding splits using `oe62_preprocessing.py` file.
 
 ### MD22
 
