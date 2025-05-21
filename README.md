@@ -2,6 +2,8 @@
 
 This repository provides the official implementation and training pipeline for the paper [**Electrostatics from Laplacian Eigenbasis for Neural Network Interatomic Potentials**](https://arxiv.org/pdf/2505.14606).
 
+![PDF Diagram](figures/main_phi.png)
+
 ---
 
 ## 🌌 Introduction
