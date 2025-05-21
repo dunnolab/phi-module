@@ -1,0 +1,17 @@
+program: main_sweep.py
+
+method: "grid"
+metric:
+  name: "test_loss"
+  goal: "minimize"
+parameters:
+  batch_size:
+    values: [8, 32, 64, 128]
+  cutoff:
+    values: [4.0, 5.0, 6.0]
+  lr:
+    values: [0.0005, 0.0001, 0.001, 0.005, 0.00005]
+  config_file_name:
+    value: configs/visnet/visnet_md22.yml
+name: "ViSNetMD22-(Ac-Ala3-NHMe)-Baseline"
+

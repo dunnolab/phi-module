@@ -1,0 +1,48 @@
+task: 'oe62'
+seed: 1 
+data:
+    train_path: /mnt/mydir/oe62-data/total_energy_lincorr_pbe0/train/pbe0_train.mdb
+    val_path: /mnt/mydir/oe62-data/total_energy_lincorr_pbe0/val/pbe0_val.mdb
+    test_path: /mnt/mydir/oe62-data/total_energy_lincorr_pbe0/test/pbe0_test.mdb
+
+    mean: 0.0036029790876720654
+    std: 1.742015096746636
+model:
+    type: 'schnet'
+
+    use_pbc: False
+    use_phi_module: True
+
+    hidden_features: 512
+    num_filters: 256
+    num_interactions: 4
+    num_gaussians: 200
+    radius_cutoff: 6.0
+    max_num_neighbors: 50
+training:
+    predict_forces: False
+
+    batch_size: 512 
+    epochs: 250
+    lr: 0.0005 
+    weight_decay: 0.00001
+    clipping: 999
+    warmup_epochs: 3
+
+    early_stopping_patience: null
+    early_stopping_delta: 0.001
+
+    pde_lambda: 0.0001
+    net_charge_lambda: 0.0001
+    pde_warmup_epochs: 0
+    k_eigenvalues: 5
+logging:
+    logger: wandb # basic or wandb
+    project_name: phi-module
+    run_name: schnet-phi
+    group: schnet-phi-oe62
+    output_dir: /mnt/mydir/
+
+    log_interval_steps: 500 # only for TerminalLogger
+
+    checkpoints_path: /mnt/mydir/schnet-oe62

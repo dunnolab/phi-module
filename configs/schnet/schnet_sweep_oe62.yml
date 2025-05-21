@@ -1,0 +1,19 @@
+program: main_sweep.py
+
+method: "grid"
+metric:
+  name: "test_loss"
+  goal: "minimize"
+parameters:
+  pde_lambda:
+    values: [0.0001, 0.001, 0.01, 0.1, 0.5]
+  net_charge_lambda:
+    values: [0.0001, 0.001, 0.01, 0.1, 0.5]
+  pde_warmup_epochs:
+    values: [0, 3, 10, 25]
+  k_eigenvalues:
+    values: [3, 5, 7, 9, 10, 15, 20, 25]
+  config_file_name:
+    value: configs/schnet/schnet_oe62.yml
+name: "SchNetOE62EigenSweep"
+

@@ -1,0 +1,58 @@
+task: 'oe62'
+seed: 1 
+data:
+    train_path: /mnt/mydir/oe62-data/total_energy_lincorr_pbe0/train/pbe0_train.mdb
+    val_path: /mnt/mydir/oe62-data/total_energy_lincorr_pbe0/val/pbe0_val.mdb
+    test_path: /mnt/mydir/oe62-data/total_energy_lincorr_pbe0/test/pbe0_test.mdb
+
+    mean: 0.0036029790876720654
+    std: 1.742015096746636
+model:
+    type: 'dimenetpp'
+
+    use_pbc: False
+    use_phi_module: True
+
+    hidden_channels: 256
+    num_blocks: 3
+    int_emb_size: 64
+    basis_emb_size: 8
+    out_emb_channels: 192
+    num_spherical: 7
+    num_radial: 6
+
+    cutoff: 6.0
+    max_num_neighbors: 50
+    envelope_exponent: 5
+    num_before_skip: 1
+    num_after_skip: 2
+    num_output_layers: 3
+    act: 'swish'
+    output_initializer: 'zeros'
+training:
+    predict_forces: False
+
+    batch_size: 64
+    epochs: 200
+    lr: 0.0001 
+    weight_decay: 0.00001
+    clipping: 999  
+    warmup_epochs: 3
+
+    early_stopping_patience: null
+    early_stopping_delta: 0.001
+
+    pde_lambda: 0.01
+    net_charge_lambda: 0.0001
+    pde_warmup_epochs: 0
+    k_eigenvalues: 9
+logging:
+    logger: wandb # basic or wandb
+    project_name: phi-module
+    run_name: dimenet++-phi-oe62
+    group: dimenet++-oe62
+    output_dir: /mnt/mydir/
+
+    log_interval_steps: 500 # only for TerminalLogger
+
+    checkpoints_path: /mnt/mydir/dimenet++-oe62-phi-module-ablation
