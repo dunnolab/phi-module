@@ -1,6 +1,6 @@
 # Φ-Module
 
-This repository provides the official implementation and training pipeline for the paper [**Electrostatics from Laplacian Eigenbasis for Neural Network Interatomic Potentials**](https://arxiv.org/pdf/2505.14606).
+This repository provides the official implementation and training pipeline for the paper [**Electrostatics from Laplacian Eigenbasis for Neural Network Interatomic Potentials**](https://arxiv.org/pdf/2505.14606). This work was accepted at [ICML 2025 GenBio Workshop](https://genbio-workshop.github.io/2025/).
 
 ![PDF Diagram](figures/main_phi.png)
 
